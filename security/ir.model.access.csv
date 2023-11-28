@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+parte_diario_user,parte_diario_user,model_parte_diario,base.group_user,1,1,1,1
+parte_diario_admin,parte_diario_admin,model_parte_diario,base.group_system,1,1,1,1

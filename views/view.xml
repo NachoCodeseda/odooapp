@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_name_form" model="ir.ui.view">
+        <field name="name">name.form.view</field>
+        <field name="model">model_name</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_name_tree" model="ir.ui.view">
+        <field name="name">name.tree</field>
+        <field name="model">model_name</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_name_kanban" model="ir.ui.view">
+            <field name="name">name.kanban</field>
+            <field name="model">model_name</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click card">
+
+                                <div class="card-header d-flex justify-content-between align-items-center">
+
+                                    <strong class="text-primary">
+                                        <field name="name"/>
+                                    </strong>
+
+                                </div>
+                                <div class="card_body">
+                                    <field name="parent_id"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="name_action_window">
+        <field name="name">Name</field>
+        <field name="res_model">model_name</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+<menuitem id="modulo_parte_diario" sequence="300" name="Name"/>
+<menuitem id="parte_diario_element" name="Opciones" parent="modulo_parte_diario" sequence="90"/>
+<menuitem name="Parte diario" id="parte_diario" action="parte_diario_action_window" sequence="1" parent="modulo_parte_diario"/>
+
+</odoo>
